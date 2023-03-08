@@ -15,7 +15,8 @@ public class GameStart
 
     private static String getFilePath(String fileName)
     {
-        String filePath = new File(fileName).getAbsolutePath();
+        File filePathFile = new File("src/com/rpg/resources");
+        String filePath = filePathFile.getAbsolutePath() + "/" + fileName;
         return filePath;
     }
     private static JSONArray parseJson(String filePath)
