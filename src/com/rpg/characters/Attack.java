@@ -1,5 +1,4 @@
 package com.rpg.characters;
-
 public class Attack
 {
     private String name;
@@ -7,7 +6,13 @@ public class Attack
     private int armorPenetration;
     private String type;
 
-    public Attack() {}
+    public Attack(String name, int damager, int armorPenetration, String type)
+    {
+        this.setName(name);
+        this.setDamager(damager);
+        this.setArmorPenetration(armorPenetration);
+        this.setType(type);
+    }
 
     public String getName()
     {
