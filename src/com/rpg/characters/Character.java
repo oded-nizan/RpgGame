@@ -10,7 +10,7 @@ public class Character
     private int armor;
     private int damage;
     private int accuracy;
-    private String resistType;
+    private final String resistType;
     private Attack attack1;
     private Attack attack2;
     private Attack attack3;
@@ -32,9 +32,21 @@ public class Character
         this.setAttack1(attack1);
         this.setAttack2(attack2);
         this.setAttack3(attack3);
-        this.setResistType(resistType);
+        this.resistType = resistType;
         this.type = type;
         this.id = id;
+    }
+
+    // A constructor to be a super for the npc class
+    public Character(int id, String type, String resistType, Attack attack1, Attack attack2, Attack attack3, Attack attack4)
+    {
+        this.id = id;
+        this.type = type;
+        this.resistType = resistType;
+        this.setAttack1(attack1);
+        this.setAttack2(attack2);
+        this.setAttack3(attack3);
+        this.setAttack4(attack4);
     }
 
     public String getName()
@@ -101,7 +113,15 @@ public class Character
 
     public void setHealth(int health)
     {
-        if (health >= 0 && health <= 5000)
+        if (health < 0)
+        {
+            this.health = 1;
+        }
+        else if (health > 5000)
+        {
+            this.health = 5000;
+        }
+        else
         {
             this.health = health;
         }
@@ -109,7 +129,15 @@ public class Character
 
     public void setArmor(int armor)
     {
-        if (armor >= 0 && armor <= 25)
+        if (armor < 0)
+        {
+            this.armor = 0;
+        }
+        else if (armor > 25)
+        {
+            this.armor = 25;
+        }
+        else
         {
             this.armor = armor;
         }
@@ -117,7 +145,15 @@ public class Character
 
     public void setDamage(int damage)
     {
-        if (damage >= 0 && damage <= 250)
+        if (damage <= 0)
+        {
+            this.damage = 1;
+        }
+        else if (damage >= 250)
+        {
+            this.damage = 250;
+        }
+        else
         {
             this.damage = damage;
         }
@@ -125,18 +161,17 @@ public class Character
 
     public void setAccuracy(int accuracy)
     {
-        if (accuracy >= 1 && accuracy <= 100)
+        if (accuracy < 0)
+        {
+            this.accuracy = 1;
+        }
+        else if (accuracy > 100)
+        {
+            this.accuracy = 100;
+        }
+        else
         {
             this.accuracy = accuracy;
-        }
-    }
-
-    public void setResistType(String resistType)
-    {
-        switch (resistType)
-        {
-            case "Magical", "Physical", "Elemental", "Chemical" -> this.resistType = resistType;
-            default -> System.out.println("Invalid input");
         }
     }
 

@@ -1,0 +1,20 @@
+{
+  "enemyTypes": [
+    {
+      "id": 1,
+      "Type": "Zombie"
+    },
+    {
+      "id": 2,
+      "Type": "Skeleton"
+    },
+    {
+      "id": 3,
+      "Type": "Venom"
+    },
+    {
+      "id": 4,
+      "Type": "Vampire"
+    }
+  ]
+}
