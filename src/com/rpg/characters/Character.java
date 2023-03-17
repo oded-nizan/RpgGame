@@ -19,6 +19,7 @@ public class Character
     private Attack attack6;
     private Attack attack7;
     private Attack attack8;
+    private ArrayList<Attack> attacks = new ArrayList<>(3);
     private final String type;
     private final int id;
 
@@ -32,6 +33,7 @@ public class Character
         this.setAttack1(attack1);
         this.setAttack2(attack2);
         this.setAttack3(attack3);
+        this.setAttacksInitial();
         this.resistType = resistType;
         this.type = type;
         this.id = id;
@@ -81,16 +83,8 @@ public class Character
 
     public ArrayList<Attack> getAttacks()
     {
-        ArrayList<Attack> attacks = new ArrayList<>();
-        attacks.add(this.attack1);
-        attacks.add(this.attack2);
-        attacks.add(this.attack3);
-        attacks.add(this.attack4);
-        attacks.add(this.attack5);
-        attacks.add(this.attack6);
-        attacks.add(this.attack7);
-        attacks.add(this.attack8);
-        return attacks;
+
+        return this.attacks;
     }
 
     public String getType()
@@ -193,26 +187,43 @@ public class Character
     public void setAttack4(Attack attack4)
     {
         this.attack4 = attack4;
+        this.setAttacksAdd(attack4);
     }
 
     public void setAttack5(Attack attack5)
     {
         this.attack5 = attack5;
+        this.setAttacksAdd(attack5);
     }
 
     public void setAttack6(Attack attack6)
     {
         this.attack6 = attack6;
+        this.setAttacksAdd(attack6);
     }
 
     public void setAttack7(Attack attack7)
     {
         this.attack7 = attack7;
+        this.setAttacksAdd(attack7);
     }
 
     public void setAttack8(Attack attack8)
     {
         this.attack8 = attack8;
+        this.setAttacksAdd(attack8);
+    }
+
+    public void setAttacksInitial()
+    {
+        this.attacks.add(this.attack1);
+        this.attacks.add(this.attack2);
+        this.attacks.add(this.attack3);
+    }
+
+    public void setAttacksAdd(Attack newAttack)
+    {
+        this.attacks.add(newAttack);
     }
 
     public boolean isHit()
@@ -229,7 +240,12 @@ public class Character
         toString = toString + "The character's armor is : " + this.armor + "\n";
         toString = toString + "The character's damage is : " + this.damage + "\n";
         toString = toString + "The character's accuracy is : " + this.accuracy + "\n";
-        toString = toString + "The character's attacks are : " + this.getAttacks() + "\n";
+        StringBuilder add = new StringBuilder();
+        for (int i = 0; i < this.getAttacks().toArray().length; i++)
+        {
+            add.append(this.getAttacks().get(i).toString()).append("\n");
+        }
+        toString = toString + add;
         return toString;
     }
 }

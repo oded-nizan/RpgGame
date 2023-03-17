@@ -2,19 +2,67 @@
   "enemyTypes": [
     {
       "id": 1,
-      "Type": "Zombie"
+      "Type": "Zombie",
+      "attack1Name": "Bite",
+      "attack1Damager": 1,
+      "attack1ArmorPenetration": 4,
+      "attack1Type": "Elemental",
+      "attack2Name": "Brain!",
+      "attack2Damager": 4,
+      "attack2ArmorPenetration": 0,
+      "attack2Type": "Elemental",
+      "attack3Name": "Walk of the dead",
+      "attack3Damager": 10,
+      "attack3ArmorPenetration": 0,
+      "attack3Type": "Elemental"
     },
     {
       "id": 2,
-      "Type": "Skeleton"
+      "Type": "Skeleton",
+      "attack1Name": "Arrow",
+      "attack1Damager": 3,
+      "attack1ArmorPenetration": 3,
+      "attack1Type": "Elemental",
+      "attack2Name": "Stan",
+      "attack2Damager": 4,
+      "attack2ArmorPenetration": 0,
+      "attack2Type": "Elemental",
+      "attack3Name": "HELL",
+      "attack3Damager": 5,
+      "attack3ArmorPenetration": 0,
+      "attack3Type": "Elemental"
     },
     {
       "id": 3,
-      "Type": "Venom"
+      "Type": "Venom",
+      "attack1Name": "Spike",
+      "attack1Damager": 2,
+      "attack1ArmorPenetration": 4,
+      "attack1Type": "Elemental",
+      "attack2Name": "Sting",
+      "attack2Damager": 3,
+      "attack2ArmorPenetration": 0,
+      "attack2Type": "Elemental",
+      "attack3Name": "Jump scare",
+      "attack3Damager": 7,
+      "attack3ArmorPenetration": 0,
+      "attack3Type": "Elemental"
     },
     {
       "id": 4,
-      "Type": "Vampire"
+      "Type": "Vampire",
+      "attack1Name": "Bite",
+      "attack1Damager": 2,
+      "attack1ArmorPenetration": 4,
+      "attack1Type": "Elemental",
+      "attack2Name": "Bat",
+      "attack2Damager": 4,
+      "attack2ArmorPenetration": 0,
+      "attack2Type": "Elemental",
+      "attack3Name": "Crash",
+      "attack3Damager": 2,
+      "attack3ArmorPenetration": 3,
+      "attack3Type": "Elemental"
     }
   ]
 }

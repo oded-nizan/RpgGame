@@ -59,7 +59,7 @@ public class GameStart
         JSONObject none = new JSONObject();
         for (JSONObject jsonObject:charList)
         {
-            int charId = (int) jsonObject.get("id");
+            int charId = (int) (long) jsonObject.get("id");
             if (charId == chosen)
             {
                 return jsonObject;
@@ -94,41 +94,41 @@ public class GameStart
         return choice;
     }
 
-    private static String characterGetName()
+    public static String characterGetName()
     {
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("Please enter your character's name : ");
         String result = input.nextLine();
+        System.out.println("-------------------------------------------------------------------------");
         return result;
     }
 
-    public static Player getPlayer(String fileName)
+    public static Player getPlayer(String fileName, String characterName)
     {
         int choice = characterMenu();
         JSONObject character = getCharacterObject(fileName, choice);
-        String characterName = characterGetName();
         int characterHealth = 200;
-        int characterArmor = (int) character.get("armor");
-        int characterDamage = (int) character.get("damage");
-        int characterAccuracy = (int) character.get("accuracy");
+        int characterArmor = (int) (long) character.get("armor");
+        int characterDamage = (int) (long) character.get("damage");
+        int characterAccuracy = (int) (long) character.get("accuracy");
         String attack1Name = (String) character.get("attack1Name");
-        int attack1Damager = (int) character.get("attack1Damager");
-        int attack1ArmorPenetration = (int) character.get("attack1ArmorPenetration");
+        int attack1Damager = (int) (long) character.get("attack1Damager");
+        int attack1ArmorPenetration = (int) (long) character.get("attack1ArmorPenetration");
         String attack1Type = (String) character.get("attack1Type");
         Attack characterAttack1 = new Attack(attack1Name, attack1Damager, attack1ArmorPenetration, attack1Type);
         String attack2Name = (String) character.get("attack2Name");
-        int attack2Damager = (int) character.get("attack2Damager");
-        int attack2ArmorPenetration = (int) character.get("attack2ArmorPenetration");
+        int attack2Damager = (int) (long) character.get("attack2Damager");
+        int attack2ArmorPenetration = (int) (long) character.get("attack2ArmorPenetration");
         String attack2Type = (String) character.get("attack2Type");
         Attack characterAttack2 = new Attack(attack2Name, attack2Damager, attack2ArmorPenetration, attack2Type);
         String attack3Name = (String) character.get("attack3Name");
-        int attack3Damager = (int) character.get("attack3Damager");
-        int attack3ArmorPenetration = (int) character.get("attack3ArmorPenetration");
+        int attack3Damager = (int) (long) character.get("attack3Damager");
+        int attack3ArmorPenetration = (int) (long) character.get("attack3ArmorPenetration");
         String attack3Type = (String) character.get("attack3Type");
         Attack characterAttack3 = new Attack(attack3Name, attack3Damager, attack3ArmorPenetration, attack3Type);
         String characterResistType = (String) character.get("resistType");
         String characterType = (String) character.get("type");
-        int characterId = (int) character.get("id");
+        int characterId = (int) (long) character.get("id");
         Player player = new Player(characterName, characterHealth, characterArmor, characterDamage, characterAccuracy, characterResistType, characterAttack1, characterAttack2, characterAttack3, characterType, characterId);
         return player;
     }

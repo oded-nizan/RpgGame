@@ -9,10 +9,10 @@ public class NPC extends Character
     public NPC(int id, String type, String resistType, Attack attack1, Attack attack2, Attack attack3, Attack attack4, Player player)
     {
         super(id, type, resistType, attack1, attack2, attack3, attack4);
-        randomHealth(this.getHealth() - 500, this.getHealth() + 500);
-        randomArmor(this.getArmor() - 5, this.getArmor() + 5);
-        randomDamage(this.getDamage() - 50, this.getDamage() + 50);
-        randomAccuracy(this.getAccuracy() - 20, this.getAccuracy() + 20);
+        this.randomHealth(this.getHealth() - 500, this.getHealth() + 500);
+        this.randomArmor(this.getArmor() - 5, this.getArmor() + 5);
+        this.randomDamage(this.getDamage() - 50, this.getDamage() + 50);
+        this.randomAccuracy(this.getAccuracy() - 20, this.getAccuracy() + 20);
     }
 
     public void randomHealth(int min, int max)
