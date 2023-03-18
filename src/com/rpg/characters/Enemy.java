@@ -2,17 +2,17 @@ package com.rpg.characters;
 
 import java.util.Random;
 
-public class NPC extends Character
+public class Enemy extends Character
 {
 
     static Random random = new Random();
-    public NPC(int id, String type, String resistType, Attack attack1, Attack attack2, Attack attack3, Attack attack4, Player player)
+    public Enemy(int id, String type, Attack attack1, Attack attack2, Attack attack3, Player player)
     {
-        super(id, type, resistType, attack1, attack2, attack3, attack4);
-        this.randomHealth(this.getHealth() - 500, this.getHealth() + 500);
-        this.randomArmor(this.getArmor() - 5, this.getArmor() + 5);
-        this.randomDamage(this.getDamage() - 50, this.getDamage() + 50);
-        this.randomAccuracy(this.getAccuracy() - 20, this.getAccuracy() + 20);
+        super(id, type, attack1, attack2, attack3);
+        this.randomHealth(player.getHealth() - 500, player.getHealth() + 500);
+        this.randomArmor(player.getArmor() - 5, player.getArmor() + 5);
+        this.randomDamage(player.getDamage() - 50, player.getDamage() + 50);
+        this.randomAccuracy(player.getAccuracy() - 20, player.getAccuracy() + 20);
     }
 
     public void randomHealth(int min, int max)

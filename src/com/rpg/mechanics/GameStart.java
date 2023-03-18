@@ -2,60 +2,19 @@ package com.rpg.mechanics;
 
 import com.rpg.characters.Attack;
 import com.rpg.characters.Player;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameStart
 {
     static Scanner input = new Scanner(System.in);
-    static JSONParser parser = new JSONParser();
 
-    private static String getFilePath(String fileName)
-    {
-        File filePathFile = new File("src/com/rpg/resources");
-        String filePath = filePathFile.getAbsolutePath() + "/" + fileName;
-        return filePath;
-    }
-    private static JSONArray parseJson(String filePath)
-    {
-        JSONObject jsonObject;
-        JSONArray TypesArray = new JSONArray();
-        try {
-            jsonObject = (JSONObject) parser.parse(new FileReader(filePath));
-            TypesArray = (JSONArray) jsonObject.get("TypesArray");
-        }
-        catch (Exception e)
-        {
-            System.out.println("There has been an error");
-            e.printStackTrace();
-            System.exit(0);
-        }
-        return TypesArray;
-    }
-
-    private static ArrayList<JSONObject> getCharacterArray(String fileName)
-    {
-        String filePath = getFilePath(fileName);
-        JSONArray TypesArray = parseJson(filePath);
-        JSONObject jsonObject;
-        ArrayList<JSONObject> charList = new ArrayList<>();
-        for (Object o : TypesArray)
-        {
-            jsonObject = (JSONObject) o;
-            charList.add(jsonObject);
-        }
-        return charList;
-    }
 
     private static JSONObject getCharacterObject(String fileName, int chosen)
     {
-        ArrayList<JSONObject> charList = getCharacterArray(fileName);
+        ArrayList<JSONObject> charList = Essentials.getCharacterArray(fileName, "TypesArray");
         JSONObject none = new JSONObject();
         for (JSONObject jsonObject:charList)
         {
@@ -107,29 +66,34 @@ public class GameStart
     {
         int choice = characterMenu();
         JSONObject character = getCharacterObject(fileName, choice);
+
         int characterHealth = 200;
         int characterArmor = (int) (long) character.get("armor");
         int characterDamage = (int) (long) character.get("damage");
         int characterAccuracy = (int) (long) character.get("accuracy");
+
         String attack1Name = (String) character.get("attack1Name");
         int attack1Damager = (int) (long) character.get("attack1Damager");
         int attack1ArmorPenetration = (int) (long) character.get("attack1ArmorPenetration");
         String attack1Type = (String) character.get("attack1Type");
         Attack characterAttack1 = new Attack(attack1Name, attack1Damager, attack1ArmorPenetration, attack1Type);
+
         String attack2Name = (String) character.get("attack2Name");
         int attack2Damager = (int) (long) character.get("attack2Damager");
         int attack2ArmorPenetration = (int) (long) character.get("attack2ArmorPenetration");
         String attack2Type = (String) character.get("attack2Type");
         Attack characterAttack2 = new Attack(attack2Name, attack2Damager, attack2ArmorPenetration, attack2Type);
+
         String attack3Name = (String) character.get("attack3Name");
         int attack3Damager = (int) (long) character.get("attack3Damager");
         int attack3ArmorPenetration = (int) (long) character.get("attack3ArmorPenetration");
         String attack3Type = (String) character.get("attack3Type");
         Attack characterAttack3 = new Attack(attack3Name, attack3Damager, attack3ArmorPenetration, attack3Type);
-        String characterResistType = (String) character.get("resistType");
+
         String characterType = (String) character.get("type");
         int characterId = (int) (long) character.get("id");
-        Player player = new Player(characterName, characterHealth, characterArmor, characterDamage, characterAccuracy, characterResistType, characterAttack1, characterAttack2, characterAttack3, characterType, characterId);
+        Player player = new Player(characterName, characterHealth, characterArmor, characterDamage, characterAccuracy, characterAttack1, characterAttack2, characterAttack3, characterType, characterId);
+
         return player;
     }
 

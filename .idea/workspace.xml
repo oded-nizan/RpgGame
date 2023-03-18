@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0cd43db-eb39-40fc-8b8c-652a9f55952f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/CreateEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/Essentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/Fight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rpg/characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/characters/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rpg/characters/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/characters/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rpg/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rpg/characters/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/characters/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rpg/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/characters/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rpg/mechanics/CreateEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/CreateEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rpg/mechanics/GameStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/mechanics/GameStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rpg/resources/Enemies.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/resources/Enemies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rpg/resources/Types.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rpg/resources/PlayerTypes.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -8,9 +8,9 @@ public class Player extends Character
     private int gold;
     private boolean isMaxedStats;
 
-    public Player(String name, int health, int armor, int damage, int accuracy, String resistType, Attack attack1, Attack attack2, Attack attack3, String type, int id)
+    public Player(String name, int health, int armor, int damage, int accuracy, Attack attack1, Attack attack2, Attack attack3, String type, int id)
     {
-        super(name, health, armor, damage, accuracy, resistType, attack1, attack2, attack3, type, id);
+        super(name, health, armor, damage, accuracy, attack1, attack2, attack3, type, id);
         this.setGold(0);
         this.setXP(0);
         this.setLvl(0);

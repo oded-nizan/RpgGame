@@ -10,7 +10,6 @@ public class Character
     private int armor;
     private int damage;
     private int accuracy;
-    private final String resistType;
     private Attack attack1;
     private Attack attack2;
     private Attack attack3;
@@ -19,11 +18,11 @@ public class Character
     private Attack attack6;
     private Attack attack7;
     private Attack attack8;
-    private ArrayList<Attack> attacks = new ArrayList<>(3);
+    private final ArrayList<Attack> attacks = new ArrayList<>();
     private final String type;
     private final int id;
 
-    public Character(String name, int health, int armor, int damage, int accuracy, String resistType, Attack attack1, Attack attack2, Attack attack3, String type, int id)
+    public Character(String name, int health, int armor, int damage, int accuracy, Attack attack1, Attack attack2, Attack attack3, String type, int id)
     {
         this.setName(name);
         this.setHealth(health);
@@ -34,17 +33,15 @@ public class Character
         this.setAttack2(attack2);
         this.setAttack3(attack3);
         this.setAttacksInitial();
-        this.resistType = resistType;
         this.type = type;
         this.id = id;
     }
 
     // A constructor to be a super for the npc class
-    public Character(int id, String type, String resistType, Attack attack1, Attack attack2, Attack attack3, Attack attack4)
+    public Character(int id, String type, Attack attack1, Attack attack2, Attack attack3)
     {
         this.id = id;
         this.type = type;
-        this.resistType = resistType;
         this.setAttack1(attack1);
         this.setAttack2(attack2);
         this.setAttack3(attack3);
@@ -76,11 +73,6 @@ public class Character
         return this.accuracy;
     }
 
-    public String getResistType()
-    {
-        return this.resistType;
-    }
-
     public ArrayList<Attack> getAttacks()
     {
 
@@ -109,7 +101,7 @@ public class Character
     {
         if (health < 0)
         {
-            this.health = 1;
+            this.health = 0;
         }
         else if (health > 5000)
         {
