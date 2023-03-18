@@ -28,6 +28,12 @@ public class Player extends Character
         {
             this.XP = XP;
         }
+
+        if (this.XP > 500)
+        {
+            this.XP -= 500;
+            this.setLvl(this.getLvl() + 1);
+        }
     }
 
     public int getLvl()

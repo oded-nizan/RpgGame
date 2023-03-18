@@ -95,6 +95,10 @@ public class Character
         {
             this.name = name;
         }
+        else
+        {
+            this.name = "mistake";
+        }
     }
 
     public void setHealth(int health)

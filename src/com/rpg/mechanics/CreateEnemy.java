@@ -14,7 +14,7 @@ public class CreateEnemy
 {
 
     private final static Random random = new Random();
-    private static JSONObject geyEnemyObject(String fileName)
+    private static JSONObject getEnemyObject(String fileName)
     {
         int x = random.nextInt(3) + 1;
         ArrayList<JSONObject> charList = Essentials.getCharacterArray(fileName, "enemyTypes");
@@ -33,7 +33,7 @@ public class CreateEnemy
 
     public static Enemy createEnemy(String fileName, Player player)
     {
-        JSONObject enemyJsonObject = geyEnemyObject(fileName);
+        JSONObject enemyJsonObject = getEnemyObject(fileName);
 
         int enemyId = (int) (long) enemyJsonObject.get("id");
         String enemyType = (String) enemyJsonObject.get("Type");
