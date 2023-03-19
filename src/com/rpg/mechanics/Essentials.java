@@ -1,8 +1,5 @@
 package com.rpg.mechanics;
 
-import com.rpg.characters.Attack;
-import com.rpg.characters.Character;
-import com.rpg.characters.Player;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

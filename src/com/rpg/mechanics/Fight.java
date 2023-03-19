@@ -202,11 +202,26 @@ public class Fight
 
         if (whoWon)
         {
+            int lvlo = player.getLvl();
             int bonusXP = random.nextInt(10, 100);
             player.setXP(player.getXP() + bonusXP);
+            int lvln = player.getLvl();
             int bonusGold = random.nextInt(10, 100);
             player.setGold(player.getGold() + bonusGold);
             System.out.println("You hava won the battle! " + "/n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
+            if (lvln > lvlo)
+            {
+                System.out.println("You have leveled up please go to the store to claim your new attack");
+            }
+            if (!player.getIsMaxedLvl())
+            {
+                player.maxLvl();
+                if (player.getIsMaxedLvl())
+                {
+                    System.out.println("Your character is on the max level");
+                }
+            }
+
         }
         else
         {

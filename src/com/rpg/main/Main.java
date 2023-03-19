@@ -2,6 +2,7 @@ package com.rpg.main;
 
 import com.rpg.characters.Player;
 import com.rpg.mechanics.GameStart;
+import com.rpg.mechanics.MainMenu;
 
 public class Main
 {
@@ -11,5 +12,6 @@ public class Main
         Player player = GameStart.getPlayer("Types.json", characterName);
         System.out.println(player.toString());
         GameStart.Continue();
+        MainMenu.mainMenu(player);
     }
 }

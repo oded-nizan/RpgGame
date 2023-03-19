@@ -101,7 +101,9 @@ public class GameStart
     {
         System.out.println("Congratulations! You have successfully created your player character and are now ready to play!");
         System.out.println("Please enter true to continue or false to exit the program and loose everything:");
-        boolean doContinue = input.hasNext();
+
+
+        boolean doContinue = input.nextBoolean();
         if (!doContinue)
         {
             System.exit(0);

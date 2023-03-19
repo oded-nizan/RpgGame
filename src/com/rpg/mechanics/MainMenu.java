@@ -8,7 +8,7 @@ public class MainMenu
 {
     private final static Scanner scanner = new Scanner(System.in);
 
-    public static void mainMenu(Player player)
+    private static void mainMenuPrint()
     {
         System.out.println("------------------------------------------------------------------------------");
         System.out.println("You can now choose your next move in the game");
@@ -20,24 +20,24 @@ public class MainMenu
                 -1: to exit the program enter -1
                 Please do not enter a number that is not one of the options!!
                 """);
+    }
 
-        int choice = 0;
-        while (choice != -1)
+    public static void mainMenu(Player player)
+    {
+        int choice;
+        boolean continueMain = true;
+        while (continueMain)
         {
-           choice = scanner.nextInt();
+            mainMenuPrint();
+            choice = scanner.nextInt();
 
-           switch (choice)
-           {
-               case 1:
-                   Fight.enemyFight(player, "Enemies.json");
-                   break;
-
-               case 2:
-                   Fight.playerFight(player, "PlayerTypes.json");
-                   break;
-
-
-           }
+            switch (choice) {
+                case 1 -> Fight.enemyFight(player, "Enemies.json");
+                case 2 -> Fight.playerFight(player, "PlayerTypes.json");
+                case 3 -> Shop.BuyShop(player);
+                case -1 -> continueMain = false;
+                default -> System.out.println("You have entered an invalid input");
+            }
         }
     }
 }
