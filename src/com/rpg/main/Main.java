@@ -9,7 +9,7 @@ public class Main
     public static void main(String[] args)
     {
         String characterName = GameStart.characterGetName();
-        Player player = GameStart.getPlayer("Types.json", characterName);
+        Player player = GameStart.getPlayer("PlayerTypes.json", characterName);
         System.out.println(player.toString());
         GameStart.Continue();
         MainMenu.mainMenu(player);

@@ -45,7 +45,7 @@ public class Character
         this.setAttack1(attack1);
         this.setAttack2(attack2);
         this.setAttack3(attack3);
-        this.setAttack4(attack4);
+        this.setAttacksInitial();
     }
 
     public String getName()

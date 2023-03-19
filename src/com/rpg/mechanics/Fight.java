@@ -53,7 +53,7 @@ public class Fight
     {
         System.out.println("It is your turn to attack!");
         int choice = -1;
-        while(choice < player.getAttacks().toArray().length + 1 && choice > 0) {
+        while(choice > player.getAttacks().toArray().length + 1 || choice < 0) {
             System.out.println("Please enter the number of the attack you would like to choose(1-" + player.getAttacks().toArray().length + " : ");
             choice = scanner.nextInt();
             if (choice < 1 || choice > player.getAttacks().toArray().length)
@@ -82,7 +82,7 @@ public class Fight
     {
         System.out.println("It is your turn to attack!");
         int choice = -1;
-        while(choice < player.getAttacks().toArray().length + 1 && choice > 0) {
+        while(choice > player.getAttacks().toArray().length + 1 || choice < 0) {
             System.out.println("Please enter the number of the attack you would like to choose(1-" + player.getAttacks().toArray().length + " : ");
             choice = scanner.nextInt();
             if (choice < 1 || choice > player.getAttacks().toArray().length)
@@ -111,7 +111,7 @@ public class Fight
     {
         System.out.println("Your enemy is now attacking!");
         int attackNo = random.nextInt(1, 3);
-        Attack enemyAttack = enemy.getAttacks().get(attackNo);
+        Attack enemyAttack = enemy.getAttacks().get(attackNo - 1);
         System.out.println("Your enemy has chose their attack!");
         System.out.println(enemyAttack.toString());
 
