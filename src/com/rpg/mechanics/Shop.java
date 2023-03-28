@@ -25,7 +25,8 @@ public class Shop
                 4: increase your accuracy by a random 5-10
                 5: check if you are eligible for a new attack;
                 -1. exit the shop
-                """);
+                *** The price for options 1-4 is :
+                """ + price);
     }
 
     private static void shop1(Player player)
