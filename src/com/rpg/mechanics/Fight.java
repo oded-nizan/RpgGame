@@ -7,6 +7,7 @@ import com.rpg.characters.Player;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Fight
 {
@@ -208,7 +209,7 @@ public class Fight
             int lvln = player.getLvl();
             int bonusGold = random.nextInt(10, 100);
             player.setGold(player.getGold() + bonusGold);
-            System.out.println("You hava won the battle! " + "/n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
+            System.out.println("You hava won the battle! " + "\n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
             if (lvln > lvlo)
             {
                 System.out.println("You have leveled up please go to the store to claim your new attack");

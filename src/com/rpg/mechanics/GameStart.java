@@ -67,6 +67,7 @@ public class GameStart
         int choice = characterMenu();
         JSONObject character = getCharacterObject(fileName, choice);
 
+
         int characterHealth = 200;
         int characterArmor = (int) (long) character.get("armor");
         int characterDamage = (int) (long) character.get("damage");
