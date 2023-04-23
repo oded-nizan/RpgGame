@@ -161,6 +161,10 @@ public class Fight
         {
             int enemyDamage = playerAttack(player, enemy);
             enemyHealth -= enemyDamage;
+            if (enemyHealth == 0)
+            {
+                break;
+            }
 
             int playerDamage = enemyAttack(player, enemy);
             playerHealth -= playerDamage;
@@ -180,6 +184,10 @@ public class Fight
         {
             int otherPlayerDamage = playerAttack(player, otherPlayer);
             otherPlayerHealth -= otherPlayerDamage;
+            if(otherPlayerHealth == 0)
+            {
+                break;
+            }
 
             int playerDamage = otherPlayerAttack(player, otherPlayer);
             playerHealth -= playerDamage;
@@ -204,10 +212,10 @@ public class Fight
         if (whoWon)
         {
             int lvlo = player.getLvl();
-            int bonusXP = random.nextInt(10, 100);
+            int bonusXP = random.nextInt(20, 200);
             player.setXP(player.getXP() + bonusXP);
             int lvln = player.getLvl();
-            int bonusGold = random.nextInt(10, 100);
+            int bonusGold = random.nextInt(20, 200);
             player.setGold(player.getGold() + bonusGold);
             System.out.println("You hava won the battle! " + "\n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
             if (lvln > lvlo)
@@ -242,11 +250,26 @@ public class Fight
 
         if (whoWon)
         {
-            int bonusXP = random.nextInt(10, 100);
+            int lvlo = player.getLvl();
+            int bonusXP = random.nextInt(20, 200);
             player.setXP(player.getXP() + bonusXP);
-            int bonusGold = random.nextInt(10, 100);
+            int lvln = player.getLvl();
+            int bonusGold = random.nextInt(20, 200);
             player.setGold(player.getGold() + bonusGold);
-            System.out.println("You hava won the battle! " + "/n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
+            System.out.println("You hava won the battle! " + "\n" + "Your bonuses are: xp: " + bonusXP + " gold: " + bonusGold);
+            if (lvln > lvlo)
+            {
+                System.out.println("You have leveled up please go to the store to claim your new attack");
+            }
+            if (!player.getIsMaxedLvl())
+            {
+                player.maxLvl();
+                if (player.getIsMaxedLvl())
+                {
+                    System.out.println("Your character is on the max level");
+                }
+            }
+
         }
         else
         {

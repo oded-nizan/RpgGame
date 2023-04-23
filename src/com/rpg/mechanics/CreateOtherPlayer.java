@@ -20,7 +20,7 @@ public class CreateOtherPlayer
         int armor = random.nextInt(player.getArmor() - 5, player.getArmor() + 5);
         int accuracy = random.nextInt(player.getAccuracy() - 20, player.getAccuracy() + 20);
 
-        ArrayList<JSONObject> charList = Essentials.getCharacterArray(fileName, "enemyTypes");
+        ArrayList<JSONObject> charList = Essentials.getCharacterArray(fileName, "TypesArray");
         JSONObject none = new JSONObject();
         JSONObject finalChar = new JSONObject();
         for (JSONObject jsonObject : charList) {

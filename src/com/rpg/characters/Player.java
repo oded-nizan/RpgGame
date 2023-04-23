@@ -13,10 +13,11 @@ public class Player extends Character
         super(name, health, armor, damage, accuracy, attack1, attack2, attack3, type, id);
         this.setGold(0);
         this.setXP(0);
-        this.setLvl(0);
+        this.setLvl(1);
         this.maxLvl();
         this.maxStats();
     }
+
 
     public int getXP()
     {
@@ -43,7 +44,7 @@ public class Player extends Character
 
     public void setLvl(int lvl)
     {
-        if (lvl >= 1 && lvl  <= 6)
+        if (lvl >= 1 && lvl  <= 20)
         {
             this.lvl = lvl;
         }
